@@ -59,20 +59,12 @@ const Navbar = () => {
             </>
           ) : (
             <div className="flex items-center gap-4">
-              <NavLink 
-                to="/login" 
-                className={({ isActive }) => 
-                  `flex items-center gap-1 hover:text-white transition-colors ${isActive ? 'text-white' : 'text-slate-400'}`
-                }
-              >
+              <Link to="/login" className="flex items-center gap-1 text-slate-400 hover:text-white transition-colors">
                 <LogIn size={18} /> Sign In
-              </NavLink>
-              <NavLink 
-                to="/register" 
-                className="btn btn-primary"
-              >
+              </Link>
+              <Link to="/register" className="btn btn-primary">
                 <UserPlus size={18} /> Join Now
-              </NavLink>
+              </Link>
             </div>
           )}
         </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getCars } from '../services/api';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { Eye, Plus } from 'lucide-react';
 
@@ -15,7 +16,7 @@ const Home = () => {
 
   const fetchCars = async () => {
     try {
-      const response = await getCars();
+      const response = await getCars({ limit: 1000 });
       console.log(' Fetched cars:', response.data.data);
       setCars(response.data.data);
     } catch (error) {

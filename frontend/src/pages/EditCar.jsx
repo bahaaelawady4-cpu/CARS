@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import { getCarById, updateCar } from '../services/api';
-import { useAuth } from '../context/AuthContext';
 import { ArrowLeft, Save, Car, Tag, DollarSign, Calendar, FileText, ImageIcon } from 'lucide-react';
 
 const EditCar = () => {
@@ -21,6 +20,7 @@ const EditCar = () => {
 
   useEffect(() => {
     fetchCarDetails();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   const fetchCarDetails = async () => {
